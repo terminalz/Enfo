@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
+import SmallCard from "@/components/SmallCard";
+import PricingCard from "@/components/PricingCard";
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +13,161 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <div className="layout">
+        <div className="grid w-full gap-10 pb-5 border-b lg:grid-cols-2">
+          <div>
+            <div>
+              <span className="px-1 py-[1px] text-xs text-white rounded bg-primary-300">
+                beta
+              </span>
+            </div>
+            <h2 className="font-ibm">Start Growing with Enfo</h2>
+            <h4 className="mt-3 text-justify">
+              Easy solution to advertise and promote your SMEs business to a
+              larger audience.
+            </h4>
+            <button
+              className="px-6 py-2 my-5 font-medium text-white rounded hover:shadow-2xl hover:bg-primary-400 bg-primary-300"
+              type="button"
+            >
+              Get started
+            </button>
+          </div>
+          <div className="flex items-center justify-center w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="max-h-[300px]"
+              src="/image/banner.svg"
+              alt="banner"
+            />
+          </div>
+        </div>
+
+        <div className="my-10">
+          <h4 className="font-bold text-primary-300">Bring your</h4>
+          <h2 className="font-bold font-ibm">
+            Business Journey to the next level
+          </h2>
+          <div className="grid w-full mt-10 lg:grid-cols-2 gap-7">
+            <SmallCard
+              title="Revenue"
+              description="Take a leap in your business revenue."
+              url="/image/statistics.png"
+            />
+            <SmallCard
+              title="Network"
+              description="Expand your business network within a platform."
+              url="/image/team.png"
+            />
+            <SmallCard
+              title="Management"
+              description="Manage and promote all businesses in one place."
+              url="/image/scheme.png"
+            />
+            <SmallCard
+              title="Insights"
+              description="Discover business insights and financial approachs."
+              url="/image/solution.png"
+            />
+          </div>
+          <div className="flex justify-end mt-7">
+            <div className="inline-block p-3 transition-all duration-300 border rounded-full spin group hover:border-black">
+              <button
+                type="button"
+                className="w-32 h-32 font-medium text-white rounded-full group-hover:bg-primary-400 bg-primary-300"
+              >
+                Start now
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="w-full mt-10 mb-28">
+          <div>
+            <h4 className="font-bold text-primary-300">Pricing</h4>
+            <h2 className="font-bold font-ibm">
+              One tool for the whole company
+            </h2>
+            <h2 className="font-bold font-ibm">Free for team to try.</h2>
+          </div>
+          <div className="grid w-full gap-10 mt-5 md:grid-cols-3">
+            <PricingCard
+              url="/image/personal.png"
+              title="Startup"
+              description="For advertising every corner of your business."
+              price="Free"
+              price_desc="for small team"
+              btn_text="Get started"
+              disabled={false}
+              feature_title=""
+              features={[
+                "Unlimited promotion",
+                "Sync across devices",
+                "Custom link",
+              ]}
+            />
+            <PricingCard
+              url="/image/team 2.png"
+              title="Small Team"
+              description="For ads collaboration and marketing."
+              price="$5"
+              price_desc="$5 billed monthly"
+              btn_text="Coming soon"
+              disabled
+              feature_title="Everything in Personal, plus"
+              features={[
+                "Unlimited backlinks",
+                "Analytics tooling",
+                "SAML SSO",
+              ]}
+            />
+            <PricingCard
+              url="/image/enterprise.png"
+              title="Enterprise"
+              description="For controlling and supporting the business model."
+              price="$20 ~"
+              price_desc="$200 billed annually"
+              btn_text="Coming soon"
+              disabled
+              feature_title="Everything in Team, plus"
+              features={[
+                "Advanced security",
+                "Custom contract",
+                "Dedicated success guide",
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center mb-32 space-y-2">
+        <h2 className="font-handwriting">Enfo</h2>
+        <h2 className="font-ibm">Start Promote Today</h2>
+        <div className="text-center">
+          <h4 className="text-sm text-gray-600">Get started for free.</h4>
+          <h4 className="mb-4 text-sm text-gray-600">
+            More features is on the way.
+          </h4>
+        </div>
+        <button
+          type="button"
+          className="px-6 py-2 text-sm text-white rounded bg-primary-300"
+        >
+          Try Enfo for free
+        </button>
+      </div>
+      <div className="mb-2 border-t layout">
+        <div>
+          <h2 className="font-handwriting">Enfo</h2>
+          <div className="mb-5">
+            <span className="px-1 py-[1px] text-xs text-white rounded bg-primary-300">
+              beta
+            </span>
+          </div>
+          <h4 className="text-xs text-gray-600">
+            Created and supported for the purpose of WIX 2002 Project Management
+            course.
+          </h4>
+        </div>
+      </div>
     </div>
   );
 };

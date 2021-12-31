@@ -10,9 +10,12 @@ interface Props {
   user?: User;
 }
 
-const Settings: NextPage<Props> = ({ shop, user }) => {
+const Settings: NextPage<Props> = ({
+  shop,
+  // user
+}) => {
   //   const { data: session } = useSession();
-  console.log(shop?.description);
+  // console.log(shop?.description);
 
   return (
     <div>
