@@ -68,10 +68,12 @@ model Shop {
 }
 
 model Product {
-  id          String   @id @default(cuid())
-  name        String
-  description String
-  image_url   String[]
-  shop        Shop     @relation(references: [id], fields: [shop_id])
-  shop_id     String
+  id           String  @id @default(cuid())
+  name         String
+  description  String
+  image_url    String?
+  backlink_url String?
+  price        String?
+  shop         Shop    @relation(references: [id], fields: [shop_id])
+  shop_id      String
 }
