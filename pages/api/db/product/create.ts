@@ -37,8 +37,8 @@ export default async function handler(
     return res.status(200).json({ message: "Created" });
   } catch (error) {
     // console.log(error.message);
+    return res.status(400).json({ message: "Invalid" });
   }
-  return res.status(400).json({ message: "Invalid" });
 }
 
 // {
